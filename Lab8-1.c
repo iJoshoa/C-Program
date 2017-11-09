@@ -93,10 +93,38 @@ void price(Book b[]){ //แสดงมูลค่าหนังสือร�
 int main()
 {
     Book b[N];
-    addBook(b);
-    findname(b);
-    findid(b);
-    remain(b);
-    price(b);
-    return 0;
+    int i=0,in;
+
+    while(i==0)
+    {
+        printf("\n------------------Menu------------------");
+        printf("\n1 = Add Book");
+        printf("\n2 = Find name");
+        printf("\n3 = Find ID");
+        printf("\n4 = Remain");
+        printf("\n5 = Price");
+        printf("\n6 = Exit");
+        printf("\nEnter number : ");
+        scanf("%d",&in);
+        switch(in)
+        {
+        case 1 :
+            addBook(b);
+            break;
+        case 2 :
+            findname(b);
+            break;
+        case 3 :
+            findid(b);
+            break;
+        case 4 :
+            remain(b);
+            break;
+        case 5 :
+            price(b);
+            break;
+        case 6 :
+            i++;
+        }
+    }
 }
