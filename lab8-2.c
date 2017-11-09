@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define N 3
+#define N 10
 typedef struct
 {
     int id;
@@ -50,33 +50,41 @@ void sumAll(Std s[])
     }
     printf("Sum : %.2f Avr = %.2f\n",sum,sum/N);
 }
-void max(Std s[]){
+void max(Std s[])
+{
     int i;
     float sum=0,max;
     float std2[N];
-    for(i=0;i<N;i++){
+    for(i=0; i<N; i++)
+    {
         std2[i]=0;
         std2[i]=(s[i].room+s[i].work+s[i].mid+s[i].fi);
     }
     max=std2[0];
-    for(i=0;i<N;i++){
-        if(max<=std2[i]){
+    for(i=0; i<N; i++)
+    {
+        if(max<=std2[i])
+        {
             max=std2[i];
         }
     }
     printf("Max = %.2f",max);
 }
-void min(Std s[]){
+void min(Std s[])
+{
     int i;
     float sum=0,min;
     float std2[N];
-    for(i=0;i<N;i++){
+    for(i=0; i<N; i++)
+    {
         std2[i]=0;
         std2[i]=(s[i].room+s[i].work+s[i].mid+s[i].fi);
     }
     min=std2[0];
-    for(i=0;i<N;i++){
-        if(min>=std2[i]){
+    for(i=0; i<N; i++)
+    {
+        if(min>=std2[i])
+        {
             min=std2[i];
         }
     }
