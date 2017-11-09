@@ -30,65 +30,87 @@ void addBook(Book b[])
         printf("\n----------------------------------------\n");
     }
 }
-void findname(Book b[]){ //ค้นหาหนังสือจากชื่อหนังสือ โดยแสดงรายละเอียดหนังสือทั้งหมด หากไม่พบ ให้แสดงว่า Not found
+void findname(Book b[])  //ค้นหาหนังสือจากชื่อหนังสือ โดยแสดงรายละเอียดหนังสือทั้งหมด หากไม่พบ ให้แสดงว่า Not found
+{
     int i,f;
     char namef[20];
     printf("Enter find name : ");
     scanf("%s",namef);
     for(i=0; i<N; i++)
     {
-        if(strcmp((b[i].name),namef)==0){
+        if(strcmp((b[i].name),namef)==0)
+        {
             f=i;
+            break;
         }
-        else{
+        else
+        {
             f=N+1;
         }
     }
-    if(f==N+1){
+    if(f==N+1)
+    {
         printf("\nNot found");
     }
-    else{
+    else
+    {
         printf("\nid : %d, name : %s, name Author : %s, remain : %d, amount : %d, price :%f\n",b[f].id,b[f].name,b[f].nameAu,b[f].remain,b[f].amount,b[f].price);
     }
 }
-void findid(Book b[]){ //ค้นหาหนังสือจากรหัสหนังสือ โดยแสดงรายละเอียดหนังสือทั้งหมด หากไม่พบ ให้แสดงว่า Not found
+void findid(Book b[])  //ค้นหาหนังสือจากรหัสหนังสือ โดยแสดงรายละเอียดหนังสือทั้งหมด หากไม่พบ ให้แสดงว่า Not found
+{
     int i;
     int idf,f;
     printf("Enter find id : ");
     scanf("%d",&idf);
-    for(i=0; i<N; i++)
+    for(i=0;i<N; i++)
     {
-        if(b[i].id==idf){
+        if(b[i].id==idf)
+        {
             f=i;
+            break;
         }
-        else{
+        else
+        {
             f=N+1;
         }
     }
-    if(f==N+1){
+    if(f==N+1)
+    {
         printf("\nNot found");
     }
-    else{
+    else
+    {
         printf("\nid : %d, name : %s, name Author : %s, remain : %d, amount : %d, price :%f\n",b[f].id,b[f].name,b[f].nameAu,b[f].remain,b[f].amount,b[f].price);
     }
 }
-void remain(Book b[]){ //นับจำนวนหนังสือทุกเล่มคงเหลือในห้องสมุด
+void remain(Book b[])  //นับจำนวนหนังสือทุกเล่มคงเหลือในห้องสมุด
+{
     int i;
     int c=0;
     for(i=0; i<N; i++)
     {
-       c+=b[i].remain;
+        c+=b[i].remain;
     }
     printf("\nRemain = %d",c);
 }
-void price(Book b[]){ //แสดงมูลค่าหนังสือรวมทั้งห้องสมุดทั้งที่ถูกยืมไป และคงเหลือ
+void price(Book b[])  //แสดงมูลค่าหนังสือรวมทั้งห้องสมุดทั้งที่ถูกยืมไป และคงเหลือ
+{
     int i;
     float c=0;
     for(i=0; i<N; i++)
     {
-       c+=(b[i].amount)*(b[i].price);
+        c+=(b[i].amount)*(b[i].price);
     }
     printf("\nPrice All = %f",c);
+}
+void output(Book b[])
+{
+    int i;
+    for(i=0; i<N; i++)
+    {
+        printf("id : %d, name : %s\n",b[i].id,b[i].name);
+    }
 }
 int main()
 {
@@ -123,6 +145,8 @@ int main()
         case 5 :
             price(b);
             break;
+        case 7 :
+            output(b);
         case 6 :
             i++;
         }
