@@ -1,12 +1,12 @@
 #include <stdio.h>
-#define N 10
+#define N 10 //จำนวนหนังสือ 10 สามารถ เพิ่มได้จากตรงนี้
 typedef struct
 {
     int id;
     char name[20];
-    char nameAu[20];
-    int remain;
-    int amount;
+    char nameAu[20];//ชื่อคนแต่ง
+    int remain; //คงเหลือ
+    int amount;//ทั้งหมด
     float price;
 } Book;
 void addBook(Book b[])
@@ -30,7 +30,7 @@ void addBook(Book b[])
         printf("\n----------------------------------------\n");
     }
 }
-void findname(Book b[]){
+void findname(Book b[]){ //ค้นหาหนังสือจากชื่อหนังสือ โดยแสดงรายละเอียดหนังสือทั้งหมด หากไม่พบ ให้แสดงว่า Not found
     int i,f;
     char namef[20];
     printf("Enter find name : ");
@@ -51,7 +51,7 @@ void findname(Book b[]){
         printf("\nid : %d, name : %s, name Author : %s, remain : %d, amount : %d, price :%f\n",b[f].id,b[f].name,b[f].nameAu,b[f].remain,b[f].amount,b[f].price);
     }
 }
-void findid(Book b[]){
+void findid(Book b[]){ //ค้นหาหนังสือจากรหัสหนังสือ โดยแสดงรายละเอียดหนังสือทั้งหมด หากไม่พบ ให้แสดงว่า Not found
     int i;
     int idf,f;
     printf("Enter find id : ");
@@ -72,7 +72,7 @@ void findid(Book b[]){
         printf("\nid : %d, name : %s, name Author : %s, remain : %d, amount : %d, price :%f\n",b[f].id,b[f].name,b[f].nameAu,b[f].remain,b[f].amount,b[f].price);
     }
 }
-void remain(Book b[]){
+void remain(Book b[]){ //นับจำนวนหนังสือทุกเล่มคงเหลือในห้องสมุด
     int i;
     int c=0;
     for(i=0; i<N; i++)
@@ -81,7 +81,7 @@ void remain(Book b[]){
     }
     printf("\nremain = %d",c);
 }
-void amount(Book b[]){
+void amount(Book b[]){ //แสดงมูลค่าหนังสือรวมทั้งห้องสมุดทั้งที่ถูกยืมไป และคงเหลือ
     int i;
     int c=0;
     for(i=0; i<N; i++)
