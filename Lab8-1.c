@@ -88,7 +88,7 @@ void amount(Book b[]){ //แสดงมูลค่าหนังสือร�
     {
        c+=b[i].amount;
     }
-    printf("\nremain = %d",c);
+    printf("\namount = %d",c);
 }
 int main()
 {
